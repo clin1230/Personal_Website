@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Charlotte Lin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=League+Spartan:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@400;700&display=swap');
+
+        /*-----------------------------------*\
+        #NAVBAR
+        \*-----------------------------------*/
+
+        .navbar {
+            width: 100%;
+            position: fixed;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 50;
+            display: flex;
+            padding: 16px 26px;
+            margin: auto;
+            left: 0;
+            right: 0;
+        }
+
+        .nav_logo {
+            font-family: "League Spartan", sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #db4a2b;
+        }
+
+        .nav_menu {
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            gap: 6px;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;  
+            border-radius: 9999px;
+            display: flex;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); 
+            gap: 32px;
+            padding: 12px 48px;
+            background-color: #f0f0f0; 
+            font-family: "Libre Baskerville", serif;
+            opacity: 0.9;
+        }
+
+        .nav_menu a {
+            text-decoration: none; 
+            color: #271c19;  
+        }
+
+        .nav_menu a:hover{
+            cursor: pointer;
+            color: #db4a2b;
+        }
+
+        .nav_contact {
+            text-decoration: none;
+            color: var(--text-color);
+            align-items: center;
+            font-family: "Libre Baskerville", serif;
+            gap: 6px;
+            font-size: 12px;
+            padding: 10px 20px;
+            border: var(--text-color) 1px solid;
+            border-radius: 9999px;
+            display: flex;
+        }
+
+        .navright {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav_moon {
+            font-size: 20px;
+            color: var(--text-color);
+        }
+
+        /* #fcf1ee */
+
+        :root {
+  --bg-color: white;
+  --text-color: #271c19;
+  --cbg: pink;
+  --input-bg: blue;
+  --button-bg: #271c19;
+  --button-color: #fff;
+  --swatch-bg: #fff;
+  --swatch-text: #333;
+  --swatch-shadow: rgba(0, 0, 0, 0.1);
+  --icon-color: #271c19;
+  --switch-bg: #ccc;
+  --switch-knob: #fff;
+}
+
+[data-theme="dark"] {
+  --cbg: #222325;
+  --bg-color: #2b2b33;
+  --text-color: white;
+  --input-bg: #333;
+  --button-bg: #fff;
+  --button-color: #222325;
+  --swatch-bg: #fff;
+  --swatch-text: #333;
+  --swatch-shadow: rgba(0, 0, 0, 0.2);
+  --icon-color: #222325;
+  --switch-bg: #fff;
+  --switch-knob: #222325;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+        /*-----------------------------------*\
+        #INTRO
+        \*-----------------------------------*/
+
+        .profilepic {
+            width: 128px;
+            border-radius: 9999px;
+            object-fit: cover;
+            object-position: center;
+            background-color: white;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px; /* Adjusted gap to make it shorter */
+            padding-top: 120px;
+            text-align: center;
+            font-family: "league spartan", sans-serif;
+            color: var(--text-color);
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            height: 80vh;
+        }
+
+        .intro h1 {
+            display: inline-block;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .contact_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact_btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #db4a2b;
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+        }
+
+        .resume_btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 9999px;
+        }
+
+        /*-----------------------------------*\
+        #EYES
+        \*-----------------------------------*/
+
+        .container {
+            width: 100%;
+        }
+
+        .eye {
+            position: relative;
+            display: inline-block;
+            border-radius: 50% / 60%; /* Make the eye oval */
+            height: 27px; /* Height longer than width */
+            width: 17px;
+            background: #f0f0f0;
+            margin: 0 2px;
+            border: 1px solid var(--text-color);
+        }
+
+        .pupil {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        /*-----------------------------------*\
+        #ABOUT
+        \*-----------------------------------*/
+
+        #about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: var(--text-color);
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            height: 120vh;
+        }
+
+        .aboutme_title {
+            font-family: "League Spartan", sans-serif;
+            color: #db4a2b;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #about h2 {
+            font-family: "League Spartan", sans-serif;
+            color: var(--text-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .aboutme_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-direction: row;
+            margin-top: 30px;
+        }
+
+        .aboutme_pic {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin-right: 50px;
+        }
+
+        .aboutme_container img {
+            width: 250px;
+            height: 300px;
+            border-radius: 20px;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+.circle_logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-60%, -40%);
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Ensure height is set */
+    background-color: #db4a2b;
+    border-radius: 50%; /* Ensure it's a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+}
+
+.circle_logo svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+text {
+    fill: white;
+    font-family: "Lato", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-variant-ligatures: none;
+    letter-spacing: 6px;
+    animation: rotate 25s linear infinite;
+    transform-origin: 250px 250px;
+}
+
+svg {
+    max-width: 80vmin;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.textcircle {
+    transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+    transform-origin: 250px 250px;
+}
+
+svg:hover .textcircle {
+    transform: scale(1.2) rotate(90deg);
+}
+
+
+        .aboutme_content {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            width: 100%;
+            gap: 20px;  
+        }
+
+        .aboutme_content .intromore {
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .aboutme_container ul {
+            display: flex;
+            flex-direction: row;    
+            gap: 20px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }        
+
+        .aboutme_container li{
+            border: 1px solid var(--text-color);
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .aboutme_container li:hover {
+            background-color: #f0f0f0; /* Change background color on hover */
+            color: #db4a2b; /* Change text color on hover */
+            cursor: pointer; /* Change cursor to pointer */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+        }
+
+        .aboutme_content ul h4 {
+            font-size: 14px;
+        }
+
+        .aboutme_content ul p {
+            font-size: 14px;
+        }
+      
+        /*-----------------------------------*\
+        #WORK
+        \*-----------------------------------*/
+
+        #work {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: var(--text-color);
+            margin:auto;
+            left: 0;
+            right: 0;
+            width: 80%;
+        }
+
+        .mywork_title {
+            font-family: "League Spartan", sans-serif;
+            color: #db4a2b;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 100px;
+        }
+
+        #work h2 {
+            font-family: "League Spartan", sans-serif;
+            color: var(--text-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .workgrid {
+            margin-top: 10px;
+            width: 80%;
+        }
+
+        .one_grid {
+            border: var(--text-color) 1px solid;
+            border-radius: 12px;
+            padding: 40px;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .workgrid .gridlogo {
+            width: 40px;
+            color: #f0f0f0;
+            background-color: #db4a2b;
+            font-weight: bold;
+            padding: 5px 0;
+            border-radius: 10px;
+        }
+
+        .workgrid h3 {
+            color: var(--text-color);
+            margin: 16px 0;
+            text-align: left; 
+        }
+
+        .workgrid p {
+            color: var(--text-color);
+            text-align: left; 
+            font-size: 12px;
+        }
+
+        .one_grid a {
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .gridcontent {
+            width: 60%;
+            margin-right: 30px;
+        }
+
+        .project-image {
+            width: 40%;
+            width: 300px; 
+            height: auto; 
+            border: 1px solid #ccc; 
+            border-radius: 10px; 
+        }
+
+        .btn_morework {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            gap: 2px;
+            border: solid 1px var(--text-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+            margin-top: 50px;
+            color: var(--text-color);
+        }
+
+        .btn_morework:hover {
+            background-color: #db4a2b;
+            color: white;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+
+        #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Lora', serif;
+            color: var(--text-color);
+            margin: auto;
+            left: 0;
+            right: 0;
+            width: 80%;
+            height: 110vh;
+        }
+
+        .contact_title {
+            font-family: "League Spartan", sans-serif;
+            color: #db4a2b;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #contact h2 {
+            font-family: "League Spartan", sans-serif;
+            color: var(--text-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .fcontent_up {
+            display: flex;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 35px;
+        }
+
+        .fname {
+            padding: 10px 50px;
+            border: 0.5px solid var(--text-color);
+            border-radius: 12px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .femail {
+            padding: 10px 50px;
+            border: 0.5px solid var(--text-color);
+            border-radius: 12px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .fmessage {
+            padding: 10px 50px;
+            border: 0.5px solid var(--text-color);
+            border-radius: 12px;
+            font-size: 14px;
+            outline: none;
+            width: 100%;
+            height: 200px;
+        }
+
+        .btn_submit {
+            margin-top: 20px;
+            border: 0.5px solid var(--text-color);
+            border-radius: 9999px;
+            font-size: 14px;
+            background-color: #db4a2b;
+            color: white;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+.footer {
+  margin-top: 30px;
+}
+
+.footer_container {
+  text-align: center;
+}
+
+.footer_logo {
+  font-family: "League Spartan", sans-serif;
+  color: #db4a2b;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.footer_email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-family: "Libre Baskerville", serif;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.footer_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: "Libre Baskerville", serif;
+  font-size: 12px;
+  color: var(--text-color);
+  border-top: 1px solid #db4a2b;
+  margin: 15px 50px;
+  padding: 15px 0px;
+}
+
+.footer_content ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;  
+  font-size: 11px;
+}
+
+.footer_content a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-left: 20px;
+}
+
+.message-box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50; 
+    color: white; 
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    display: none; 
+}
+        
+
+    </style>
+</head>
+<body>
+
+
+    <div class="navbar">
+
+        <div class="nav_logo">Charlotte L.</div>
+        <ul class="nav_menu">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Projects</a></li>
+        </ul>
+
+        <div class="navright">
+            
+            <div class="theme-switch-wrapper">
+                <ion-icon class="theme-icon" name="moon-outline"></ion-icon>
+            </div>
+            <a href="#contact" class="nav_contact">Contact<ion-icon name="chatbubble-outline"></ion-icon></a>    
+        </div>
+           
+    </div>
+
+    <!-------------- intro ------------------>
+
+        <div class="intro">   
+            <img class="profilepic" src="memoji1.png" alt="profile">
+            <div style="display: flex; gap: 8px; align-items: baseline; height: auto;">
+                <h1>Hi! I'm Charlotte</h1>
+
+                <div class="container">
+                    <div class="eye">
+                      <div class="pupil"></div>
+                    </div>
+                    <div class="eye">
+                      <div class="pupil"></div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <h3>full-stack developer based in Taipei</h3>
+            <p style="font-size: 14px;">Hi, I'm Charlotte Lin, a full-stack developer based in Taipei. I specialize in web development using technologies like HTML, CSS, JavaScript, React, Node.js, and MongoDB. I'm passionate about creating beautiful and functional websites and am always open to new opportunities for growth and collaboration.</p>
+        </div>
+
+        <div class="contact_container">
+            <a href="#contact" class="contact_btn">contact me<ion-icon name="arrow-forward-outline"></ion-icon></a>
+            <a href="./bg.jpg" download class="resume_btn">my resume<ion-icon name="download-outline"></ion-icon></a>
+        </div>
+
+
+        <!-------------- about me ------------------>
+        <div id="about">
+            <h4 class="aboutme_title">Introduction</h4>
+            <h2>About me</h2>
+
+            <div class="aboutme_container">
+                <div class="aboutme_pic">
+                    <img src="profile.jpg" alt="profile">
+
+                    <div class="circle_logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                            <title>Circular Text Path</title>
+                            <defs>
+                                <path id="textcircle" d="M250,400
+                                    a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" transform="rotate(12,250,250)" />
+                            </defs>
+                            <g class="textcircle">
+                                <text textLength="940">
+                                    <textPath 
+                                        xlink:href="#textcircle" 
+                                        aria-label="CSS & SVG are awesome" 
+                                        textLength="940">
+                                        full-stack developer based in Taipei;
+                                    </textPath>
+                                </text>
+                            </g>
+                        </svg>
+                    </div>
+
+                </div>
+
+
+                <div class="aboutme_content">
+                    <p class="intromore">Hi, I'm Charlotte Lin, a full-stack developer based in Taipei. I specialize in web development using technologies like HTML, CSS, JavaScript, React, Node.js, and MongoDB. I'm passionate about creating beautiful and functional websites and am always open to new opportunities for growth and collaboration.</p>
+
+                    <ul>
+                        <li>
+                            <ion-icon name="code-slash-outline"></ion-icon>
+                            <h4 style="margin: 16px 0;">Languages</h4>
+                            <p>HTML, CSS, JavaScript, C#, Python</p> 
+                        </li>
+                        <li>
+                            <ion-icon name="school-outline"></ion-icon>
+                            <h4 style="margin: 16px 0;">Education</h4>
+                            <p>MS in Columbia University</p> 
+                        </li>
+                        <li>
+                            <ion-icon name="document-outline"></ion-icon>
+                            <h4 style="margin: 16px 0;">Experiences</h4>
+                            <p>Full-Stack Engineer @ Pxmart</p> 
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+   
+        </div>
+
+
+        <!-------------- my work ------------------>
+        <div id="work">
+            <h4 class="mywork_title">My work</h4>
+            <h2>Recent Projects</h2>
+            <!-- <p style="text-align: center; max-width:500px; margin-top:10px; margin-bottom:20px;">Click on each project to learn more about it.</p> -->
+        
+            <div class="workgrid">
+                <div class="one_grid">
+                    <div class="gridcontent">
+                        <ion-icon class="gridlogo" name="code-slash-outline"></ion-icon>
+                        <h3>Epilogue & Beyond</h3>
+                        <p>An immersive book-themed website with smooth scrolling and interactive storytelling.</p>
+                        <a href="#">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
+                    </div>
+                    <img src="eb.png" alt="project1" class="project-image">
+                </div>
+
+                <div class="one_grid">
+                    <div class="gridcontent">
+                    <ion-icon class="gridlogo" name="code-slash-outline"></ion-icon>
+                    <h3>Style</h3>
+                    <p>A sleek and secure e-commerce platform with AI-powered shopping assistance.</p>
+                    <a href="#">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
+                </div>
+                <img src="style.png" alt="project1" class="project-image">
+                </div>
+
+                <div class="one_grid">
+                    <div class="gridcontent">
+                    <ion-icon class="gridlogo" name="code-slash-outline"></ion-icon>
+                    <h3>My website</h3>
+                    <p>A dynamic showcase of work, skills, and accomplishments in web development.</p>
+                    <a href="#">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
+                </div>
+                <img src="portfolio.png" alt="project1" class="project-image">
+                </div>
+
+                <div class="one_grid">
+                    <div class="gridcontent">
+                    <ion-icon class="gridlogo" name="code-slash-outline"></ion-icon>
+                    <h3>Dashboard design</h3>
+                    <p>A data-driven, intuitive dashboard design that transforms complexity into clarity.</p>
+                    <a href="#">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
+                </div>
+                <img src="eb.png" alt="project1" class="project-image">
+                </div>
+            </div>
+        
+            <a href="#" class="btn_morework">Show more</a>
+        
+        </div>
+
+
+        <!-------------- contact ------------------>
+        <div id="contact">
+            <h4 class="contact_title">Connect with me</h4>
+            <h2>Get in touch</h2>
+            <p style="text-align: center; max-width:500px; margin-top:10px; margin-bottom:20px;">I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.</p>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="apikey" value="be6a7e47-d3ad-41f6-9307-092cea4d05f9">
+                <input type="hidden" name="access_key" value="be6a7e47-d3ad-41f6-9307-092cea4d05f9">
+
+                <div class="fcontent_up">
+                    <input type="text" name="name" class="fname" placeholder="Your name" required>
+                    <input type="email" name="email" class="femail" placeholder="Your email" required>
+                </div>
+                    <textarea name="message" class="fmessage" placeholder="Your message" required></textarea>
+                    <!-- <input type="hidden" name="redirect" value="https://web3forms.com/success"> -->
+                     <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+   
+
+                    <button class="btn_submit" type="submit">Send message</button>
+                    <div id="messageBox" class="message-box" style="display: none;">Your message has been submitted!</div>
+        
+            </form>
+        </div>
+
+           <!-------------- footer ------------------>
+
+        <div class="footer">
+            <div class="footer_container">
+                <div class="footer_logo">Charlotte L.</div>
+                <div class="footer_email">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    clinn1230@gmail.com
+                </div>
+            </div>
+            <div class="footer_content">
+                <p>&copy; 2024 Charlotte Lin. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Goodreads</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+    <script>
+
+        window.addEventListener("load", (event) => {
+                new cursoreffects.followingDotCursor({ color: ["#db4a2b"] });
+        });
+
+
+        $("body").mousemove(function (event) {
+        $(".eye").each(function () {
+            var eye = $(this);
+            var pupil = eye.find(".pupil");
+            var x = eye.offset().left + eye.width() / 2;
+            var y = eye.offset().top + eye.height() / 2;
+            var angle = Math.atan2(event.pageY - y, event.pageX - x);
+            
+            var pupilX = Math.cos(angle) * (eye.width() / 4); // Adjust pupil's movement range
+            var pupilY = Math.sin(angle) * (eye.height() / 4); // Adjust pupil's movement range
+            
+            pupil.css({
+            transform: `translate(-50%, -50%) translate(${pupilX}px, ${pupilY}px)`,
+            });
+        });
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+                const themeIcon = document.querySelector('.theme-icon');
+
+                themeIcon.addEventListener('click', function() {
+                    if(themeIcon.attributes.name.value === 'moon-outline') {
+                        themeIcon.setAttribute('name', 'sunny-outline');
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                    } else {
+                        themeIcon.setAttribute('name', 'moon-outline');
+                        document.documentElement.setAttribute('data-theme', 'light');
+                    }
+                });
+            });
+
+
+        document.querySelector('.btn_submit').addEventListener('click', function(event) {
+            const form = event.target.closest('form');
+            if (form.checkValidity()) {
+                event.preventDefault(); // Prevent the default form submission behavior
+                const messageBox = document.getElementById('messageBox');
+                messageBox.style.display = 'block'; // Show the message box
+
+                // Hide the message box after 3 seconds
+                setTimeout(function() {
+                    messageBox.style.display = 'none';
+                    form.submit(); 
+                    form.reset(); 
+                }, 3000);
+            }
+        });
+
+
+    </script>
+</body>
+</html>
