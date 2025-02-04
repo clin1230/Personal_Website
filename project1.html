@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio/ project1</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=League+Spartan:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@400;700&display=swap');
+
+        /*-----------------------------------*\
+        #NAVBAR
+        \*-----------------------------------*/
+
+        .navbar {
+            width: 100%;
+            position: fixed;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 50;
+            display: flex;
+            padding: 16px 26px;
+            top: 0;
+            left: 0;
+        }
+
+        .nav_logo {
+            font-family: "League Spartan", sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #db4a2b;
+        }
+
+        .nav_menu {
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            gap: 6px;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;  
+            border-radius: 9999px;
+            display: flex;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); 
+            gap: 32px;
+            padding: 12px 48px;
+            background-color: #f0f0f0; 
+            font-family: "Libre Baskerville", serif;
+            opacity: 0.9;
+        }
+
+        .nav_menu a {
+            text-decoration: none; 
+            color: #271c19;  
+        }
+
+        .nav_menu a:hover{
+            cursor: pointer;
+            color: #db4a2b;
+        }
+
+        .nav_contact {
+            text-decoration: none;
+            color: var(--text-color);
+            align-items: center;
+            font-family: "Libre Baskerville", serif;
+            gap: 6px;
+            font-size: 12px;
+            padding: 10px 20px;
+            border: var(--text-color) 1px solid;
+            border-radius: 9999px;
+            display: flex;
+        }
+
+        .navright {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav_moon {
+            font-size: 20px;
+            color: var(--text-color);
+        }
+
+        /* #fcf1ee */
+
+        :root {
+  --bg-color: white;
+  --text-color: #271c19;
+  --cbg: pink;
+  --input-bg: blue;
+  --button-bg: #271c19;
+  --button-color: #fff;
+  --swatch-bg: #fff;
+  --swatch-text: #333;
+  --swatch-shadow: rgba(0, 0, 0, 0.1);
+  --icon-color: #271c19;
+  --switch-bg: #ccc;
+  --switch-knob: #fff;
+}
+
+[data-theme="dark"] {
+  --cbg: #222325;
+  --bg-color: #2b2b33;
+  --text-color: white;
+  --input-bg: #333;
+  --button-bg: #fff;
+  --button-color: #222325;
+  --swatch-bg: #fff;
+  --swatch-text: #333;
+  --swatch-shadow: rgba(0, 0, 0, 0.2);
+  --icon-color: #222325;
+  --switch-bg: #fff;
+  --switch-knob: #222325;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+        /*-----------------------------------*\
+        #INTRO
+        \*-----------------------------------*/
+
+        .profilepic {
+            width: 128px;
+            border-radius: 9999px;
+            object-fit: cover;
+            object-position: center;
+            background-color: white;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px; /* Adjusted gap to make it shorter */
+            padding-top: 120px;
+            text-align: center;
+            font-family: "league spartan", sans-serif;
+            color: var(--text-color);
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            height: 80vh;
+        }
+
+        .intro h1 {
+            display: inline-block;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .contact_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact_btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #db4a2b;
+            color: white;
+            text-decoration: none;
+            border-radius: 9999px;
+        }
+
+        .resume_btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 9999px;
+        }
+
+/*-----------------------------------*\
+  #MAIN
+\*-----------------------------------*/
+
+.project_container {
+    width: 80%;
+    margin: 120px auto;
+    left: 0;
+    right: 0;
+    padding: 40px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-family: "league spartan", sans-serif;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 1.2rem;
+    color: #db4a2b;
+    font-weight: bold;
+}
+
+.project-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.project-overview {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.project-overview h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.project-overview p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+.project-details div {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.project-pics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin: 80px 0px;
+}
+
+.project-pics img {
+    width: 80%;
+    border-radius: 10px;
+    margin: auto;
+    border: 1px solid lightgrey;
+}
+
+.project-contents {
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: auto;
+}
+
+.project-contents div {
+    margin-bottom: 30px;
+}
+
+.project-contents h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.project-contents p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.project-contents ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-contents ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.project-contents ul li::before {
+    content: "•";
+    color: #db4a2b;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.project-contents p a {
+    color: #db4a2b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-contents p a:hover {
+    color: #333;
+}
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+.footer {
+  margin-top: 30px;
+}
+
+.footer_container {
+  text-align: center;
+}
+
+.footer_logo {
+  font-family: "League Spartan", sans-serif;
+  color: #db4a2b;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.footer_email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-family: "Libre Baskerville", serif;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.footer_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: "Libre Baskerville", serif;
+  font-size: 12px;
+  color: var(--text-color);
+  border-top: 1px solid #db4a2b;
+  margin: 15px 50px;
+  padding: 15px 0px;
+}
+
+.footer_content ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;  
+  font-size: 11px;
+}
+
+.footer_content a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-left: 20px;
+}
+
+.message-box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50; 
+    color: white; 
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    display: none; 
+}
+        
+
+    </style>
+</head>
+<body>
+
+
+    <div class="navbar">
+
+        <div class="nav_logo">Charlotte L.</div>
+        <ul class="nav_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Projects</a></li>
+        </ul>
+
+        <div class="navright">
+            
+            <div class="theme-switch-wrapper">
+                <ion-icon class="theme-icon" name="moon-outline"></ion-icon>
+            </div>
+            <a href="#contact" class="nav_contact">Contact<ion-icon name="chatbubble-outline"></ion-icon></a>    
+        </div>
+           
+    </div>
+
+  
+    <div class="project_container">
+        <div class="project-overview">
+            <div class="project-header">
+                <div>Project</div>
+                <div>01</div>
+            </div>
+            <h1>Style</h2>
+            <p>A modern, AI-powered e-commerce experience designed for seamless and secure online shopping.</p>
+            <div class="project-details">
+                <div>2024 Oct - Dec</div>
+                <div>.</div>
+                <div>Retail</div>
+            </div>
+        </div>
+
+        <div class="project-pics">
+            <img src="style.png" />
+            <img src="style2.png" />
+        </div>  
+
+        <div class="project-contents">
+            <div>
+            <h3>Project Overview</h3>
+            <p>Style is a fashion e-commerce platform built to offer an intuitive, stylish, and secure shopping experience. With a sleek design and user-friendly interface, it integrates AI-powered assistance and robust authentication mechanisms to enhance the online retail experience.</p>
+            </div>
+
+            <div>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Seamless Shopping Experience: A clean, responsive UI for effortless browsing and purchasing.</li>
+                <li>JWT Authentication: Secure user registration and login for protected transactions.</li>
+                <li>Intelligent Product Display: Category filtering and a visually appealing product showcase.</li>
+                <li>AI Chatbot Integration: ChatGPT-powered chatbot for real-time product recommendations and customer support.</li>
+                <li>Smooth Checkout Process: A fast and reliable order placement system for a hassle-free shopping experience.</li>
+            </ul>
+            </div>
+
+            <div>
+            <h3>Technology Stack</h3>
+            <ul>
+                <li>🖥️ Frontend: HTML, CSS, JavaScript</li>
+                <li>⚙️ Backend: C#</li>
+                <li>🔐 Authentication: JWT (JSON Web Token)</li>
+                <li>🤖 AI Integration: ChatGPT API</li>
+            </ul>
+            </div>
+
+            <div>
+            <h3>Project Highlights</h3>
+            <ul>
+                <li>✔️ Designed a minimalist yet engaging UI to enhance user experience.</li>
+                <li>✔️ Implemented secure authentication using JWT for customer protection.</li>
+                <li>✔️ Developed an interactive chatbot to improve user engagement and personalization.</li>
+                <li>✔️ Built a fully responsive platform to ensure smooth access on all devices.</li>
+            </ul>
+            </div>
+
+            <h3>See It in Action</h3>
+            <p>
+                <a href="https://your-live-demo-link.com" target="_blank">🔗 Live Demo</a> | 
+                <a href="https://github.com/your-repo-link" target="_blank">View Code</a> | 
+            </p>
+        </div>
+    </div>
+ 
+     
+
+           <!-------------- footer ------------------>
+
+        <div class="footer">
+            <div class="footer_container">
+                <div class="footer_logo">Charlotte L.</div>
+                <div class="footer_email">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    clinn1230@gmail.com
+                </div>
+            </div>
+            <div class="footer_content">
+                <p>&copy; 2024 Charlotte Lin. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Goodreads</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+    <script>
+
+        window.addEventListener("load", (event) => {
+                new cursoreffects.followingDotCursor({ color: ["#db4a2b"] });
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+                const themeIcon = document.querySelector('.theme-icon');
+
+                themeIcon.addEventListener('click', function() {
+                    if(themeIcon.attributes.name.value === 'moon-outline') {
+                        themeIcon.setAttribute('name', 'sunny-outline');
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                    } else {
+                        themeIcon.setAttribute('name', 'moon-outline');
+                        document.documentElement.setAttribute('data-theme', 'light');
+                    }
+                });
+            });
+
+
+    </script>
+</body>
+</html>
