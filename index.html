@@ -9,126 +9,44 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=League+Spartan:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@400;700&display=swap');
 
-        /*-----------------------------------*\
-        #NAVBAR
-        \*-----------------------------------*/
-
-        .navbar {
-            width: 100%;
-            position: fixed;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 50;
-            display: flex;
-            padding: 16px 26px;
-            margin: auto;
-            left: 0;
-            right: 0;
-        }
-
-        .nav_logo {
-            font-family: "League Spartan", sans-serif;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #db4a2b;
-        }
-
-        .nav_menu {
-            justify-content: space-between;
-            align-items: center;
-            list-style: none;
-            gap: 6px;
-            font-size: 12px;
-            margin: 0;
-            padding: 0;  
-            border-radius: 9999px;
-            display: flex;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); 
-            gap: 32px;
-            padding: 12px 48px;
-            background-color: #f0f0f0; 
-            font-family: "Libre Baskerville", serif;
-            opacity: 0.9;
-        }
-
-        .nav_menu a {
-            text-decoration: none; 
-            color: #271c19;  
-        }
-
-        .nav_menu a:hover{
-            cursor: pointer;
-            color: #db4a2b;
-        }
-
-        .nav_contact {
-            text-decoration: none;
-            color: var(--text-color);
-            align-items: center;
-            font-family: "Libre Baskerville", serif;
-            gap: 6px;
-            font-size: 12px;
-            padding: 10px 20px;
-            border: var(--text-color) 1px solid;
-            border-radius: 9999px;
-            display: flex;
-        }
-
-        .navright {
-            display: flex;
-            gap: 12px;
-        }
-
-        .nav_moon {
-            font-size: 20px;
-            color: var(--text-color);
-        }
 
         /* #fcf1ee */
 
         :root {
-  --bg-color: white;
-  --text-color: #271c19;
-  --cbg: pink;
-  --input-bg: blue;
-  --button-bg: #271c19;
-  --button-color: #fff;
-  --swatch-bg: #fff;
-  --swatch-text: #333;
-  --swatch-shadow: rgba(0, 0, 0, 0.1);
-  --icon-color: #271c19;
-  --switch-bg: #ccc;
-  --switch-knob: #fff;
-}
+        --bg-color: white;
+        --text-color: #271c19;
+        --cbg: pink;
+        --input-bg: blue;
+        --button-bg: #271c19;
+        --button-color: #fff;
+        --swatch-bg: #fff;
+        --swatch-text: #333;
+        --swatch-shadow: rgba(0, 0, 0, 0.1);
+        --icon-color: #271c19;
+        --switch-bg: #ccc;
+        --switch-knob: #fff;
+        }
 
-[data-theme="dark"] {
-  --cbg: #222325;
-  --bg-color: #2b2b33;
-  --text-color: white;
-  --input-bg: #333;
-  --button-bg: #fff;
-  --button-color: #222325;
-  --swatch-bg: #fff;
-  --swatch-text: #333;
-  --swatch-shadow: rgba(0, 0, 0, 0.2);
-  --icon-color: #222325;
-  --switch-bg: #fff;
-  --switch-knob: #222325;
-}
+        [data-theme="dark"] {
+        --cbg: #222325;
+        --bg-color: #2b2b33;
+        --text-color: white;
+        --input-bg: #333;
+        --button-bg: #fff;
+        --button-color: #222325;
+        --swatch-bg: #fff;
+        --swatch-text: #333;
+        --swatch-shadow: rgba(0, 0, 0, 0.2);
+        --icon-color: #222325;
+        --switch-bg: #fff;
+        --switch-knob: #222325;
+        }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.5s ease, color 0.5s ease; 
-}
-
-
-
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.5s ease, color 0.5s ease; 
+        }
 
 
 
@@ -263,7 +181,7 @@ body {
             justify-content: center;
             align-items: center;
             width: 100%;
-            flex-direction: row;
+            gap: 40px;
             margin-top: 30px;
         }
 
@@ -272,15 +190,27 @@ body {
             position: relative;
             justify-content: center;
             align-items: center;
-            margin-right: 50px;
         }
 
         .aboutme_container img {
-            width: 250px;
-            height: 300px;
-            border-radius: 20px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            min-height: 250px;
+            border-radius: 16px;
             object-fit: cover;
             object-position: center;
+        }
+
+
+        @media (max-width: 768px) {
+            .aboutme_container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .circle_logo {
+                display: none;
+            }
         }
         
 .circle_logo {
@@ -397,7 +327,7 @@ svg:hover .textcircle {
             margin:auto;
             left: 0;
             right: 0;
-            width: 80%;
+            width: 90%;
         }
 
         .mywork_title {
@@ -416,20 +346,30 @@ svg:hover .textcircle {
             text-align: center;
         }
         .workgrid {
-            margin-top: 10px;
-            width: 80%;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
-        .one_grid {
-            border: var(--text-color) 1px solid;
-            border-radius: 12px;
-            padding: 40px;
-            cursor: pointer;
-            text-align: left;
-            display: flex;
-            margin: 20px 0;
-        }
+.one_grid {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 300px;
+    width: 100%;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
 
+.one_grid:hover {
+    transform: translateY(-10px);
+}
         .workgrid .gridlogo {
             width: 40px;
             color: #f0f0f0;
@@ -460,16 +400,37 @@ svg:hover .textcircle {
         }
 
         .gridcontent {
-            width: 60%;
-            margin-right: 30px;
-        }
+    padding: 20px;
+    text-align: center;
+}
+
+.gridcontent h3 {
+    margin: 10px 0;
+    color: #271c19;
+}
+
+.gridcontent p {
+    color: #666;
+    margin: 10px 0;
+}
+
+.gridcontent a {
+    text-decoration: none;
+    color: #db4a2b;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
 
         .project-image {
-            width: 40%;
-            width: 300px; 
+            width: 100%;
+            max-width: 350px;
             height: auto; 
+            object-fit: cover;
+            object-position: center;
             border: 1px solid #ccc; 
             border-radius: 10px; 
+            margin: 20px 0px;
         }
 
         .btn_morework {
@@ -491,6 +452,36 @@ svg:hover .textcircle {
             color: white;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .one_grid {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gridcontent {
+                padding: 10px;
+            }
+
+            .gridcontent h3 {
+                font-size: 1.2rem;
+            }
+
+            .gridcontent p {
+                font-size: 0.9rem;
+            }
+
+            .gridcontent a {
+                font-size: 0.9rem;
+            }
+        }
+
+
+        /*-----------------------------------*\
+        #CONTACT
+        \*-----------------------------------*/
 
 
         #contact {
@@ -574,66 +565,6 @@ svg:hover .textcircle {
         }
 
 
-
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
-
-.footer {
-  margin-top: 30px;
-}
-
-.footer_container {
-  text-align: center;
-}
-
-.footer_logo {
-  font-family: "League Spartan", sans-serif;
-  color: #db4a2b;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.footer_email {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  font-family: "Libre Baskerville", serif;
-  font-size: 12px;
-  color: var(--text-color);
-}
-
-.footer_content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  font-family: "Libre Baskerville", serif;
-  font-size: 12px;
-  color: var(--text-color);
-  border-top: 1px solid #db4a2b;
-  margin: 15px 50px;
-  padding: 15px 0px;
-}
-
-.footer_content ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;  
-  font-size: 11px;
-}
-
-.footer_content a {
-  text-decoration: none;
-  color: var(--text-color);
-  margin-left: 20px;
-}
-
 .message-box {
     margin-top: 20px;
     padding: 10px;
@@ -654,10 +585,10 @@ svg:hover .textcircle {
     <div class="navbar">
 
         <div class="nav_logo">Charlotte L.</div>
-        <ul class="nav_menu">
-            <li><a href="#top">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Projects</a></li>
+        <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#work">Projects</a></li>
         </ul>
 
         <div class="navright">
@@ -665,10 +596,33 @@ svg:hover .textcircle {
             <div class="theme-switch-wrapper">
                 <ion-icon class="theme-icon" name="moon-outline"></ion-icon>
             </div>
-            <a href="#contact" class="nav_contact">Contact<ion-icon name="chatbubble-outline"></ion-icon></a>    
+            <a href="index.html#contact" class="nav_contact">Contact<ion-icon name="chatbubble-outline"></ion-icon></a>    
+        
+            <div class="phone-nav"> 
+                <div class="hamburger-menu">
+                    <div class="bar"></div>	
+                </div>
+                
+                <div class="mobile-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#work">Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>				
+                    </ul>    
+                </div>
+            </div>
+        
+        
+    
         </div>
+
+
            
     </div>
+
+
+
 
     <!-------------- intro ------------------>
 
@@ -769,7 +723,7 @@ svg:hover .textcircle {
                         <ion-icon class="gridlogo" name="code-slash-outline"></ion-icon>
                         <h3>Epilogue & Beyond</h3>
                         <p>An immersive book-themed website with smooth scrolling and interactive storytelling.</p>
-                        <a href="#">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
+                        <a href="project2.html">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
                     </div>
                     <img src="eb.png" alt="project1" class="project-image">
                 </div>
@@ -787,9 +741,9 @@ svg:hover .textcircle {
                 <div class="one_grid">
                     <div class="gridcontent">
                     <ion-icon class="gridlogo" name="code-slash-outline"></ion-icon>
-                    <h3>My website</h3>
+                    <h3>Charlotte L.</h3>
                     <p>A dynamic showcase of work, skills, and accomplishments in web development.</p>
-                    <a href="#">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
+                    <a href="project3.html">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
                 </div>
                 <img src="portfolio.png" alt="project1" class="project-image">
                 </div>
@@ -797,15 +751,15 @@ svg:hover .textcircle {
                 <div class="one_grid">
                     <div class="gridcontent">
                     <ion-icon class="gridlogo" name="code-slash-outline"></ion-icon>
-                    <h3>Dashboard design</h3>
+                    <h3>Custom Dashboard UI/UX Design</h3>
                     <p>A data-driven, intuitive dashboard design that transforms complexity into clarity.</p>
-                    <a href="#">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
+                    <a href="project4.html">Learn more<ion-icon name="arrow-forward-outline"></ion-icon></ion-icon></a>
                 </div>
-                <img src="eb.png" alt="project1" class="project-image">
+                <img src="dashboard_w.svg" alt="project1" class="project-image">
                 </div>
             </div>
         
-            <a href="#" class="btn_morework">Show more</a>
+            <!-- <a href="#" class="btn_morework">Show more</a> -->
         
         </div>
 
@@ -923,6 +877,33 @@ svg:hover .textcircle {
                 }, 3000);
             }
         });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuLinks = document.querySelectorAll('.mobile-menu li a');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const bars = document.querySelectorAll('.bar');
+
+            // Toggle mobile menu
+            hamburgerMenu.addEventListener('click', function () {
+                bars.forEach(bar => bar.classList.toggle('animate'));
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when any link is clicked
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    bars.forEach(bar => bar.classList.remove('animate'));
+                });
+            });
+        });
+
+
+
+
+
 
 
     </script>

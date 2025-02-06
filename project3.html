@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio/ project1</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=League+Spartan:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@400;700&display=swap');
+
+    
+        /* #fcf1ee */
+
+        :root {
+  --bg-color: white;
+  --text-color: #271c19;
+  --cbg: pink;
+  --input-bg: blue;
+  --button-bg: #271c19;
+  --button-color: #fff;
+  --swatch-bg: #fff;
+  --swatch-text: #333;
+  --swatch-shadow: rgba(0, 0, 0, 0.1);
+  --icon-color: #271c19;
+  --switch-bg: #ccc;
+  --switch-knob: #fff;
+}
+
+[data-theme="dark"] {
+  --cbg: #222325;
+  --bg-color: #2b2b33;
+  --text-color: white;
+  --input-bg: #333;
+  --button-bg: #fff;
+  --button-color: #222325;
+  --swatch-bg: #fff;
+  --swatch-text: #333;
+  --swatch-shadow: rgba(0, 0, 0, 0.2);
+  --icon-color: #222325;
+  --switch-bg: #fff;
+  --switch-knob: #222325;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+
+/*-----------------------------------*\
+  #MAIN
+\*-----------------------------------*/
+
+.project_container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 40px 20px;
+    border-radius: 10px;
+    font-family: "league spartan", sans-serif;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 6px;
+    font-size: 1.2rem;
+    color: #db4a2b;
+    font-weight: bold;
+}
+
+.project-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.project-overview {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.project-overview h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.project-overview p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+.project-details div {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.project-pics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin: 80px 0px;
+}
+
+.project-pics img {
+    width: 80%;
+    border-radius: 10px;
+    margin: auto;
+    border: 1px solid lightgrey;
+}
+
+.project-pics video {
+    width: 80%;
+    border-radius: 10px;
+    margin: auto;
+    border: 1px solid lightgrey;
+}
+
+.project-contents {
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.project-contents div {
+    margin-bottom: 30px;
+}
+
+.project-contents h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.project-contents p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.project-contents ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-contents ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.project-contents ul li::before {
+    content: "•";
+    color: #db4a2b;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.project-contents p a {
+    color: #db4a2b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-contents p a:hover {
+    color: #333;
+}
+        
+
+    </style>
+</head>
+<body>
+
+
+
+    <div class="navbar">
+
+        <div class="nav_logo">Charlotte L.</div>
+        <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#work">Projects</a></li>
+        </ul>
+
+        <div class="navright">
+            
+            <div class="theme-switch-wrapper">
+                <ion-icon class="theme-icon" name="moon-outline"></ion-icon>
+            </div>
+            <a href="index.html#contact" class="nav_contact">Contact<ion-icon name="chatbubble-outline"></ion-icon></a>    
+        
+            <div class="phone-nav"> 
+                <div class="hamburger-menu">
+                    <div class="bar"></div>	
+                </div>
+                
+                <div class="mobile-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#work">Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>				
+                    </ul>    
+                </div>
+            </div>
+        
+        
+    
+        </div>
+
+
+           
+    </div>
+
+
+  
+    <div class="project_container">
+        <div class="project-overview">
+            <div class="project-header">
+                <div>Project</div>
+                <div>03</div>
+            </div>
+            <h1>Charlotte L.</h1>
+            <p>A visually captivating, interactive website featuring smooth scrolling animations and dynamic storytelling elements.</p>
+            <div class="project-details">
+                <div>2024 Oct - 2025 Feb</div>
+                <div>.</div>
+                <div>Web Development</div>
+            </div>
+        </div>
+
+        <div class="project-pics">
+            <img src="portfolio.png" />
+        </div>  
+
+        <div class="project-contents">
+            <div>
+            <h3>Project Overview</h3>
+            <p>This custom-built portfolio website highlights my skills, projects, and experience as a frontend developer. Designed for seamless navigation and an engaging user experience, it features smooth animations, responsive layouts, and modern UI components to create a professional and visually appealing online presence.</p>
+            </div>
+
+            <div>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Modern UI/UX Design: Crafted a clean, minimalist interface using Figma for a polished and professional look.</li>
+                <li>Responsive Web Design (RWD): Ensured full compatibility across desktop, tablet, and mobile devices.</li>
+                <li>Smooth Animations: Integrated CSS transitions and JavaScript effects for an interactive and engaging experience.</li>
+                <li>Dark Mode Toggle: Allows users to switch between light and dark themes for a personalized experience.</li>
+            </ul>
+            </div>
+
+            <div>
+            <h3>Technology Stack</h3>
+            <ul>
+                <li>🖥️ Frontend: HTML, CSS, JavaScript</li>
+                <li>⚡ Hosting & Deployment: Vercel </li>
+            </ul>
+            </div>
+
+            <div>
+            <h3>Project Highlights</h3>
+            <ul>
+                <li>✔️ Frontend-focused, fully responsive web design (RWD)</li>
+                <li>✔️ Smooth animations and interactive elements</li>
+                <li>✔️ Optimized for performance and accessibility</li>
+                <li>✔️ Deployed efficiently using Vercel for seamless global access</li>
+            </ul>
+            </div>
+
+            <h3>See It in Action</h3>
+            <p>
+                <a href="https://your-live-demo-link.com" target="_blank">🔗 Live Demo</a> | 
+                <a href="https://github.com/your-repo-link" target="_blank">View Code</a> | 
+            </p>
+        </div>
+    </div>
+ 
+     
+
+           <!-------------- footer ------------------>
+
+        <div class="footer">
+            <div class="footer_container">
+                <div class="footer_logo">Charlotte L.</div>
+                <div class="footer_email">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    clinn1230@gmail.com
+                </div>
+            </div>
+            <div class="footer_content">
+                <p>&copy; 2024 Charlotte Lin. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Goodreads</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+    <script>
+
+        window.addEventListener("load", (event) => {
+                new cursoreffects.followingDotCursor({ color: ["#db4a2b"] });
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+                const themeIcon = document.querySelector('.theme-icon');
+
+                themeIcon.addEventListener('click', function() {
+                    if(themeIcon.attributes.name.value === 'moon-outline') {
+                        themeIcon.setAttribute('name', 'sunny-outline');
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                    } else {
+                        themeIcon.setAttribute('name', 'moon-outline');
+                        document.documentElement.setAttribute('data-theme', 'light');
+                    }
+                });
+            });
+
+
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        const menuLinks = document.querySelectorAll('.mobile-menu li a');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const bars = document.querySelectorAll('.bar');
+
+        // Toggle mobile menu
+        hamburgerMenu.addEventListener('click', function () {
+            bars.forEach(bar => bar.classList.toggle('animate'));
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when any link is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                bars.forEach(bar => bar.classList.remove('animate'));
+            });
+        });
+    });
+
+
+
+    </script>
+</body>
+</html>

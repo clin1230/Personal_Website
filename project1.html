@@ -9,80 +9,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=League+Spartan:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@400;700&display=swap');
 
-        /*-----------------------------------*\
-        #NAVBAR
-        \*-----------------------------------*/
-
-        .navbar {
-            width: 100%;
-            position: fixed;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 50;
-            display: flex;
-            padding: 16px 26px;
-            top: 0;
-            left: 0;
-        }
-
-        .nav_logo {
-            font-family: "League Spartan", sans-serif;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #db4a2b;
-        }
-
-        .nav_menu {
-            justify-content: space-between;
-            align-items: center;
-            list-style: none;
-            gap: 6px;
-            font-size: 12px;
-            margin: 0;
-            padding: 0;  
-            border-radius: 9999px;
-            display: flex;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); 
-            gap: 32px;
-            padding: 12px 48px;
-            background-color: #f0f0f0; 
-            font-family: "Libre Baskerville", serif;
-            opacity: 0.9;
-        }
-
-        .nav_menu a {
-            text-decoration: none; 
-            color: #271c19;  
-        }
-
-        .nav_menu a:hover{
-            cursor: pointer;
-            color: #db4a2b;
-        }
-
-        .nav_contact {
-            text-decoration: none;
-            color: var(--text-color);
-            align-items: center;
-            font-family: "Libre Baskerville", serif;
-            gap: 6px;
-            font-size: 12px;
-            padding: 10px 20px;
-            border: var(--text-color) 1px solid;
-            border-radius: 9999px;
-            display: flex;
-        }
-
-        .navright {
-            display: flex;
-            gap: 12px;
-        }
-
-        .nav_moon {
-            font-size: 20px;
-            color: var(--text-color);
-        }
-
+    
         /* #fcf1ee */
 
         :root {
@@ -123,86 +50,18 @@ body {
 
 
 
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-        /*-----------------------------------*\
-        #INTRO
-        \*-----------------------------------*/
-
-        .profilepic {
-            width: 128px;
-            border-radius: 9999px;
-            object-fit: cover;
-            object-position: center;
-            background-color: white;
-        }
-
-        .intro {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px; /* Adjusted gap to make it shorter */
-            padding-top: 120px;
-            text-align: center;
-            font-family: "league spartan", sans-serif;
-            color: var(--text-color);
-            margin-left: auto;
-            margin-right: auto;
-            width: 80%;
-            height: 80vh;
-        }
-
-        .intro h1 {
-            display: inline-block;
-            margin: 0;
-            white-space: nowrap;
-        }
-
-        .contact_container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .contact_btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #db4a2b;
-            color: white;
-            text-decoration: none;
-            border-radius: 9999px;
-        }
-
-        .resume_btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            border: 1px solid var(--text-color);
-            color: var(--text-color);
-            text-decoration: none;
-            border-radius: 9999px;
-        }
-
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
 
 .project_container {
     width: 80%;
-    margin: 120px auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     left: 0;
     right: 0;
     padding: 40px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     font-family: "league spartan", sans-serif;
 }
@@ -211,6 +70,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 100px;
     gap: 6px;
     font-size: 1.2rem;
     color: #db4a2b;
@@ -272,6 +132,7 @@ body {
     align-items: center;
     text-align: left;
     margin: auto;
+    margin-bottom: 100px;
 }
 
 .project-contents div {
@@ -320,76 +181,6 @@ body {
 .project-contents p a:hover {
     color: #333;
 }
-
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
-
-.footer {
-  margin-top: 30px;
-}
-
-.footer_container {
-  text-align: center;
-}
-
-.footer_logo {
-  font-family: "League Spartan", sans-serif;
-  color: #db4a2b;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.footer_email {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  font-family: "Libre Baskerville", serif;
-  font-size: 12px;
-  color: var(--text-color);
-}
-
-.footer_content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  font-family: "Libre Baskerville", serif;
-  font-size: 12px;
-  color: var(--text-color);
-  border-top: 1px solid #db4a2b;
-  margin: 15px 50px;
-  padding: 15px 0px;
-}
-
-.footer_content ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;  
-  font-size: 11px;
-}
-
-.footer_content a {
-  text-decoration: none;
-  color: var(--text-color);
-  margin-left: 20px;
-}
-
-.message-box {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #4CAF50; 
-    color: white; 
-    border-radius: 5px;
-    text-align: center;
-    font-size: 16px;
-    display: none; 
-}
         
 
     </style>
@@ -397,13 +188,14 @@ body {
 <body>
 
 
+
     <div class="navbar">
 
         <div class="nav_logo">Charlotte L.</div>
-        <ul class="nav_menu">
+        <ul class="desktop-nav">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Projects</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#work">Projects</a></li>
         </ul>
 
         <div class="navright">
@@ -411,10 +203,31 @@ body {
             <div class="theme-switch-wrapper">
                 <ion-icon class="theme-icon" name="moon-outline"></ion-icon>
             </div>
-            <a href="#contact" class="nav_contact">Contact<ion-icon name="chatbubble-outline"></ion-icon></a>    
+            <a href="index.html#contact" class="nav_contact">Contact<ion-icon name="chatbubble-outline"></ion-icon></a>    
+        
+            <div class="phone-nav"> 
+                <div class="hamburger-menu">
+                    <div class="bar"></div>	
+                </div>
+                
+                <div class="mobile-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#work">Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>				
+                    </ul>    
+                </div>
+            </div>
+        
+        
+    
         </div>
+
+
            
     </div>
+
 
   
     <div class="project_container">
@@ -423,7 +236,7 @@ body {
                 <div>Project</div>
                 <div>01</div>
             </div>
-            <h1>Style</h2>
+            <h1>Style</h1>
             <p>A modern, AI-powered e-commerce experience designed for seamless and secure online shopping.</p>
             <div class="project-details">
                 <div>2024 Oct - Dec</div>
@@ -535,6 +348,30 @@ body {
                     }
                 });
             });
+
+
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        const menuLinks = document.querySelectorAll('.mobile-menu li a');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const bars = document.querySelectorAll('.bar');
+
+        // Toggle mobile menu
+        hamburgerMenu.addEventListener('click', function () {
+            bars.forEach(bar => bar.classList.toggle('animate'));
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when any link is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                bars.forEach(bar => bar.classList.remove('animate'));
+            });
+        });
+    });
+
 
 
     </script>
