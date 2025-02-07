@@ -335,19 +335,34 @@ Mobiles Menu
 
     .footer_content ul {
       display: flex;
-      gap: 20px;
       list-style: none;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;  
-      font-size: 11px;
+      gap: 20px;  
     }
 
     .footer_content a {
       text-decoration: none;
       color: var(--text-color);
-      margin-left: 20px;
     }
 
+/* Responsive */
+@media (max-width: 600px) {
+  .footer_content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+  }
+  .footer_content p {
+    text-align: center;
+  }
+  .footer_content ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
 
 
